@@ -2,9 +2,10 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 
 module.exports = withModuleFederationPlugin({
 
-  remotes: {
-    "login": "http://localhost:4201/default-apps_login_src_app_remote-entry_entry_module_ts.js",
-  },
+  // This is not needed for dynamic federation
+  // remotes: {
+  //   "login": "http://localhost:4201/remoteEntry.mjs",
+  // },
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
